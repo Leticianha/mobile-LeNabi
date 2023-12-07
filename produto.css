@@ -217,13 +217,15 @@ body {
   box-shadow: 7px 7px #B99B8D;
 }
 
-.livros h2, .livros-mobile h2{
+.livros h2,
+.livros-mobile h2 {
   font-family: 'Young-serif';
   font-size: 23px;
   color: #3C2520;
 }
 
-.livros p, .livros-mobile p {
+.livros p,
+.livros-mobile p {
   font-family: 'Poppins-regular';
   font-size: 15px;
   padding-bottom: 3.5%;
@@ -313,8 +315,8 @@ body {
 
   .setor1Produto .mobile {
     display: grid;
-    font-size: 38px;
-    margin-top: 119px;
+    font-size: 32px;
+    margin-top: 0px;
     margin-left: 0;
     text-align: center;
     width: 100%;
@@ -323,7 +325,7 @@ body {
 
   .setor1Produto .mobile span {
     font-family: 'Poppins-bold';
-    font-size: 36px;
+    font-size: 28px;
   }
 
   .topicos {
@@ -360,62 +362,107 @@ body {
 
   .linha1Produto {
     width: 80vw;
-    margin: 0 0px 44px 37px;
+    margin: 0 0px 34px 37px;
+  }
+
+  .linha1Produto.l-tres {
+    width: 80vw;
+    height: 5px;
+    border-radius: 10px;
+    background: #4f250d;
+    margin: 0 0 0 -362px;
   }
 
   .titulo-pre h1 {
     font-family: 'Young-serif';
     color: #3C2520;
-    font-size: 36px;
+    font-size: 32px;
     text-align: center;
-}
+  }
 
-.titulo-pre {
-  margin: 2.3% 0;
-  display: grid;
+  .titulo-pre {
+    margin: 2.3% 0;
+    display: grid;
     justify-content: center;
-}
+  }
 
-.titulo-pre p {
-  font-family: 'Poppins-regular';
-  font-size: 14.5px;
-  width: 80vw;
-  text-align: center;
-  margin-top: 10px;
-  margin-bottom: 15px;
-}
+  .titulo-pre p {
+    font-family: 'Poppins-regular';
+    font-size: 14.5px;
+    width: 80vw;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
 
-  .realFundo {
+  .realFundo, .realFundo2 {
     display: none;
   }
 
   .realFundo-mobile {
     display: flex;
+    height: 404px;
+    align-items: flex-end;
+    width: 100vw;
+    padding-left: 22px;
+    margin-bottom: 60px;
   }
 
   .fundoPre-mobile {
     display: flex;
     flex-direction: column;
-    margin: 0 85px;
+    margin: 0 77px;
   }
 
   .livros-mobile {
     display: none;
-    height: 329px;
-    width: 55vw;
+    height: 72vw;
+    width: 50vw;
+    text-align: center;
   }
 
   .livros-mobile.active {
     display: block;
   }
 
+  .livros-mobile p {
+    font-size: 14.5px;
+  }
+
+  .livros-mobile h2 {
+    font-size: 20px;
+  }
+
+  .livros-mobile img {
+    margin: 3px 13.5%;
+    width: 32vw;
+  }
+
+  .buttonPreco {
+    width: 44vw;
+    height: 10vw;
+    font-size: 17px;
+    left: 75px;
+    bottom: 18px;
+  }
+
+  .buttonPreco h3 {
+    padding-left: 15%;
+    font-size: 17px;
+  }
+
+  .buttonPreco {
+    left: 43px;
+    bottom: 30px;
+  }
+
   .botao {
     display: flex;
     justify-content: space-between;
     position: relative;
-    bottom: 228px;
-    width: 80vw;
-    right: 44px;
+    bottom: 178px;
+    width: 75vw;
+    right: 49px;
   }
 
   .botao button {
@@ -430,11 +477,94 @@ body {
   }
 
   #paradaUm {
+    display: flex;
+  }
+
+  #lancamentos-page {
+    display: flex;
+  }
+
+  .prevenda {
+    margin-top: -11px;
+
+  }
+
+  #produtos-page {
+    display: flex;
+  }
+
+  .ajuste {
+    margin-top: 43px;
+  }
+
+  .linhamobile {
+    width: 80vw;
+    height: 5px;
+    border-radius: 10px;
+    background: #4f250d;
+    margin: 0 13.3% 0%;
+  }
+}
+
+@media screen and (min-width:401px) and (max-width:528px) {
+  .setor1Produto h1 {
     display: none;
   }
 
-  #lancamentos-page,
-  #produtos-page {
+  .setor1Produto .mobile {
+    display: flex;
+    font-size: 35px;
+    margin-top: 0px;
+    margin-left: 0;
+    text-align: center;
+    width: 100vw;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .setor1Produto .mobile span {
+    font-family: 'Poppins-bold';
+    font-size: 31px;
+  }
+
+  .topicos {
+    display: flex;
+    margin: 44px 0;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .cuboMarrom,
+  .cubo2Marrom {
+    width: 14vw;
+    height: 14vw;
+  }
+
+  .cuboMarrom img {
+    width: 9vw;
+  }
+
+  .cubo2Marrom img {
+    width: 10vw;
+  }
+
+  .iconeFolha p,
+  .iconeAmazon p {
+    width: 80vw;
+    text-align: center;
+    font-size: 14.5px;
+  }
+
+  .iconeFolha p {
+    margin-bottom: 20px;
+  }
+
+  .linha1Produto {
+    width: 80vw;
+    margin: 0 0px 34px 37px;
+  }
+
+  .linha1Produto, #pre-venda, #lancamentos-page, #produtos-page {
     display: none;
   }
 }

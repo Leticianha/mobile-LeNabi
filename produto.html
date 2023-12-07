@@ -70,7 +70,7 @@
                     </button>
                 </div>
             </div>
-            <nav class="navbar" >
+            <nav class="navbar">
                 <div class="buscarMobile">
                     <input type="text" spellcheck="false" class="buscarMobile" id="buscarMobile"
                         placeholder="Buscar livro" oninput="buscarMobile()">
@@ -99,17 +99,18 @@
                             <span id="conteudoMobile"></span>
                             <span id="emailMobile"></span>
                             <br>
-                            
+
                         </div>
-                       <button class="botaoSairMobile" onclick="logout()"> <p>Sair</p>
-                            <i id="logoutButtonMobile" class="fa-solid fa-arrow-right-from-bracket"
-                                ></i></button>
+                        <button class="botaoSairMobile" onclick="logout()">
+                            <p>Sair</p>
+                            <i id="logoutButtonMobile" class="fa-solid fa-arrow-right-from-bracket"></i>
+                        </button>
                     </div>
-                    
+
                 </nav>
             </nav>
         </div>
-       
+
 
         </div>
         </div>
@@ -206,7 +207,7 @@
                 <div class="realFundo-mobile">
                     <div class="fundoPre-mobile">
 
-                        <div class="livros-mobile active">
+                        <div class="livros-mobile active" data-index="0">
                             <h2>Vol.1</h2>
                             <p>Stephanie G.</p>
                             <a href="">
@@ -217,7 +218,7 @@
                             </a>
                         </div>
 
-                        <div class="livros-mobile">
+                        <div class="livros-mobile" data-index="1">
                             <h2>Vol.2</h2>
                             <p>Stephanie G.</p>
                             <a href="">
@@ -228,7 +229,7 @@
                             </a>
                         </div>
 
-                        <div class="livros-mobile">
+                        <div class="livros-mobile" data-index="2">
                             <h2>Vol.3</h2>
                             <p>Stephanie G.</p>
                             <a href="">
@@ -240,10 +241,9 @@
                         </div>
 
                         <div class="botao">
-                            <button onclick="prevLivro()"><i class="fa-solid fa-chevron-left"></i></button>
-                            <button onclick="nextLivro()"><i class="fa-solid fa-chevron-right"></i></button>
+                            <button onclick="prevLivro('pre-venda')"><i class="fa-solid fa-chevron-left"></i></button>
+                            <button onclick="nextLivro('pre-venda')"><i class="fa-solid fa-chevron-right"></i></button>
                         </div>
-
 
                     </div>
                 </div>
@@ -298,6 +298,52 @@
                         </div>
 
 
+
+                    </div>
+                </div>
+
+                <div class="realFundo-mobile">
+                    <div class="fundoPre-mobile">
+
+                        <div class="livros-mobile active" data-index="0">
+                            <h2>O morro dos...</h2>
+                            <p>Emily Brontë</p>
+                            <a href="">
+                                <img src="img-interface/ventos uivantes.webp" alt="O morro dos ventos uivantes">
+                                <div class="buttonPreco">
+                                    <h3>R$41,99</h3>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="livros-mobile" data-index="1">
+                            <h2>Hoje, depois...</h2>
+                            <p>Rachel L. S.</p>
+                            <a href="">
+                                <img src="img-interface/hoje depois amanha.webp" alt="hoje, depois, amanha">
+                                <div class="buttonPreco">
+                                    <h3>R$39,99</h3>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="livros-mobile" data-index="2">
+                            <h2>Os irmãos...</h2>
+                            <p>Jennifer L. B.</p>
+                            <a href="">
+                                <img src="img-interface/irmaos Hawthorne.webp" alt="Os irmaos Hawthorne">
+                                <div class="buttonPreco preco2">
+                                    <h3>R$47,92</h3>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="botao">
+                            <button onclick="prevLivro('lancamentos')"><i class="fa-solid fa-chevron-left"></i></button>
+                            <button onclick="nextLivro('lancamentos')"><i
+                                    class="fa-solid fa-chevron-right"></i></button>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -306,7 +352,7 @@
         <section id="produtos-page">
             <div class="prevenda">
                 <div class="titulo-pre">
-                    <h1>Produtos</h1>
+                    <h1 class="ajuste">Produtos</h1>
                     <p>Explore nossa variedade de livros de alta qualidade. Encontre histórias cativantes, conhecimento
                         inspirador e muito mais.
                     </p>
@@ -395,9 +441,91 @@
 
                     </div>
                 </div>
+
+                <div class="realFundo-mobile">
+                    <div class="fundoPre-mobile">
+    
+                        <div class="livros-mobile" data-index="0">
+                            <h2>A cabana</h2>
+                            <p>William P. Y.</p>
+                            <a href="">
+                                <img src="img-interface/a cabana.jpg" alt="a cabana">
+                                <div class="buttonPreco">
+                                    <h3>R$43,99</h3>
+                                </div>
+                            </a>
+                        </div>
+    
+                        <div class="livros-mobile" data-index="1">
+                            <h2>O ceifador</h2>
+                            <p>Neal S.</p>
+                            <a href="">
+                                <img src="img-interface/o ceifador.jpg" alt="o ceifador">
+                                <div class="buttonPreco">
+                                    <h3>R$39,34</h3>
+                                </div>
+                            </a>
+                        </div>
+    
+                        <div class="livros-mobile" data-index="2">
+                            <h2>Daisy Jones...</h2>
+                            <p>Taylor J. R.</p>
+                            <a href="">
+                                <img src="img-interface/daisy jones.jpg"
+                                    alt="Daisy Jones & The Six: Uma História de Amor e Música">
+                                <div class="buttonPreco">
+                                    <h3>R$27,99</h3>
+                                </div>
+                            </a>
+                        </div>
+    
+                        <div class="livros-mobile" data-index="3">
+                            <h2>Jogo fatal</h2>
+                            <p>Holly J.</p>
+                            <a href="">
+                                <img src="img-interface/jogo fatal.webp" alt="jogo fatal">
+                                <div class="buttonPreco">
+                                    <h3>R$34,90</h3>
+                                </div>
+                            </a>
+                        </div>
+    
+                        <div class="livros-mobile" data-index="4">
+                            <h2>A biblioteca...</h2>
+                            <p>Matt Haig</p>
+                            <a href="">
+                                <img src="img-interface/biblioteca meia noite.jpg" alt="a biblioteca da meia-noite">
+                                <div class="buttonPreco">
+                                    <h3>R$42,00</h3>
+                                </div>
+                            </a>
+                        </div>
+    
+                        <div class="livros-mobile" data-index="5">
+                            <h2>Percy Jackson...</h2>
+                            <p>Rick Riordan</p>
+                            <a href="">
+                                <img src="img-interface/ladrao de raios.jpg"
+                                    alt=" percy jackson e os olimpianos- o ladão de raios">
+                                <div class="buttonPreco">
+                                    <h3>R$50,90</h3>
+                                </div>
+                            </a>
+                        </div>
+    
+                        <div class="botao">
+                            <button onclick="prevLivro('produtos')"><i class="fa-solid fa-chevron-left"></i></button>
+                            <button onclick="nextLivro('produtos')"><i class="fa-solid fa-chevron-right"></i></button>
+                        </div>
+    
+                    </div>
+                </div>
             </div>
             <div class="linha1Produto l-tres"></div>
         </section>
+
+        <div class="linhamobile"></div>
+
     </main>
     <footer>
         <div class="container-footer">
@@ -473,23 +601,57 @@
             renderizarCabecalho();
         });
 
+        //carroseis mobile
+        var indexPreVenda = 0;
+        var indexLancamentos = 0;
+        var indexProdutos = 0;
 
-        var index = 0;
+        // Função chamada quando a página é carregada
+        window.onload = function () {
+            updateLivros(indexProdutos, 'produtos');
+        };
 
-        function showLivro(n) {
-            var livros = document.getElementsByClassName('livros-mobile');
+        function showLivro(n, tipo) {
+            var livros;
 
-            livros[index].classList.remove('active');
-            index = (index + n + livros.length) % livros.length;
+            if (tipo === "pre-venda") {
+                livros = document.querySelectorAll('#pre-venda .livros-mobile');
+                indexPreVenda = (indexPreVenda + n + livros.length) % livros.length;
+                updateLivros(indexPreVenda, 'pre-venda');
+            } else if (tipo === "lancamentos") {
+                livros = document.querySelectorAll('#lancamentos-page .livros-mobile');
+                indexLancamentos = (indexLancamentos + n + livros.length) % livros.length;
+                updateLivros(indexLancamentos, 'lancamentos');
+            } else if (tipo === "produtos") {
+                livros = document.querySelectorAll('#produtos-page .livros-mobile');
+                indexProdutos = (indexProdutos + n + livros.length) % livros.length;
+                updateLivros(indexProdutos, 'produtos');
+            }
+        }
+
+        function updateLivros(index, tipo) {
+            var livros;
+
+            if (tipo === "pre-venda") {
+                livros = document.querySelectorAll('#pre-venda .livros-mobile');
+            } else if (tipo === "lancamentos") {
+                livros = document.querySelectorAll('#lancamentos-page .livros-mobile');
+            } else if (tipo === "produtos") {
+                livros = document.querySelectorAll('#produtos-page .livros-mobile');
+            }
+
+            for (var i = 0; i < livros.length; i++) {
+                livros[i].classList.remove('active');
+            }
             livros[index].classList.add('active');
         }
 
-        function prevLivro() {
-            showLivro(-1);
+        function prevLivro(tipo) {
+            showLivro(-1, tipo);
         }
 
-        function nextLivro() {
-            showLivro(1);
+        function nextLivro(tipo) {
+            showLivro(1, tipo);
         }
     </script>
 

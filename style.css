@@ -1952,85 +1952,8 @@ input::-webkit-inner-spin-button {
 
 /* inicio sobre nós */
 
-#sobre-nos {
-  margin-top: 5.3%;
-}
 
-.titulo-sobre {
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  color: #3C2520;
-}
 
-.titulo1 {
-  font-family: 'Poppins-bold';
-  font-size: 35px;
-  position: relative;
-  top: 20px;
-}
-
-.titulo2 {
-  font-family: 'Young-serif';
-  font-size: 54px;
-}
-
-.titulo-sobre img {
-  width: 54px;
-  height: 161px;
-}
-
-.line-sobre {
-  width: 1111px;
-  height: 5px;
-  border-radius: 10px;
-  background: #3C2520;
-  margin: 5% 13.3%;
-}
-
-.nossaHistoria {
-  display: grid;
-  justify-content: center;
-}
-
-.nossaHistoria h3 {
-  font-family: 'Young-serif';
-  font-size: 31.5px;
-  text-align: center;
-  color: #3C2520;
-}
-
-.nossaHistoria p {
-  margin: 2% 0;
-  text-align: justify;
-  font-family: 'Poppins-regular';
-  width: 970px;
-  color: #3C2520;
-  font-size: 17.5px;
-}
-
-.nossaHistoria p span {
-  padding-left: 3%;
-}
-
-.frase-sobre {
-  margin: 6.5% 0;
-  text-align: center;
-  display: grid;
-  justify-items: center;
-}
-
-.frase-sobre img {
-  width: 334px;
-}
-
-.frase-sobre p {
-  width: 759px;
-  font-family: 'Young-serif';
-  font-size: 26px;
-  color: #3C2520;
-  padding-top: 2%;
-}
 
 /* fim sobre nós */
 
@@ -2273,10 +2196,6 @@ input::-webkit-inner-spin-button {
 @media screen and (max-width: 530px) {
 
   /* main -interface inicio */
-
-
-
-
 
   /* main interface fim */
 
