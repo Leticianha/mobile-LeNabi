@@ -81,7 +81,7 @@
                         <a href="produto.html#lancamentos-page">Lançamentos</a>
                         <a href="produto.html">Produtos</a>
                         <a href="sustentabilidade.html">Sustentabilidade</a>
-                        <a href="sustentabilidade.html">Favoritos</a>
+                        <a onclick="toggleFav()" href="#">Favoritos</a>
                         <a href="sobre-nos.html">Sobre nós</a>
                         <a id="sideUser" href="login.html">Login</a>
                         <div class="logado-mobile" id="userHeaderMobile" onclick="toggleMobile()">
@@ -102,6 +102,25 @@
 
                         </div>
                         <button class="botaoSairMobile" onclick="logout()">
+                            <p>Sair</p>
+                            <i id="logoutButtonMobile" class="fa-solid fa-arrow-right-from-bracket"></i>
+                        </button>
+                    </div>
+
+                </nav>
+            </nav>
+            <nav class="navbarFav">
+                <nav>
+                    <div id="popupMobile">
+                        <div class="popupMobileAll">
+                            <img src="img-interface/Group 20.svg" alt="">
+                            <span id="conteudoMobile"></span>
+                            <span id="emailMobile"></span>
+                            <br>
+
+                        </div>
+                        <button class="botaoSairMobile" onclick="logout()">
+                            <p>FAVORITOS FAZER NAO CONFUNDIR AAAA</p>
                             <p>Sair</p>
                             <i id="logoutButtonMobile" class="fa-solid fa-arrow-right-from-bracket"></i>
                         </button>
@@ -544,6 +563,46 @@
     <script src="main.js"></script>
 
     <script>
+         function buscarMobile() {
+            const termoDeBusca = document.getElementById("buscarMobile").value.toLowerCase();
+            const main = document.getElementById("main");
+            main.innerHTML = ""; // Limpa o conteúdo atual
+
+            // Realiza a busca nos elementos com a classe "livros" no arquivo "produto.html"
+            fetch("produto.html")
+                .then(response => response.text())
+                .then(data => {
+                    // Crie um elemento temporário para analisar o conteúdo do produto.html
+                    const tempElement = document.createElement("div");
+                    tempElement.innerHTML = data;
+
+                    // Encontra os elementos com a classe "livros" e verifica se o título contém o termo de busca
+                    const livros = tempElement.querySelectorAll(".livros");
+                    livros.forEach(livro => {
+                        const titulo = livro.querySelector("img").alt.toLowerCase();
+
+                        if (titulo.includes(termoDeBusca)) {
+                            main.appendChild(livro.cloneNode(true));
+                        }
+                    });
+
+                    // Adicione a classe "area-de-busca" a main para aplicar os estilos
+                    main.classList.add("area-de-busca");
+
+                    // Verifique se há filhos na área de busca
+                    if (main.children.length === 0) {
+                        main.innerHTML = 'Nenhum resultado encontrado.';
+                        main.style.display = "flex";
+                        main.style.alignItems = "center";
+                        main.style.backgroundColor = "#F8F1EE"; // Cor de fundo quando nenhum resultado é encontrado
+                    }
+                })
+                .catch(error => {
+                    console.error("Erro ao buscar produtos:", error);
+                });
+        }
+
+
         document.addEventListener('DOMContentLoaded', function () {
             renderizarCabecalho();
         });

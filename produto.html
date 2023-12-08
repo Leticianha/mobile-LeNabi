@@ -70,7 +70,7 @@
                     </button>
                 </div>
             </div>
-            <nav class="navbar">
+            <nav class="navbar" >
                 <div class="buscarMobile">
                     <input type="text" spellcheck="false" class="buscarMobile" id="buscarMobile"
                         placeholder="Buscar livro" oninput="buscarMobile()">
@@ -99,18 +99,17 @@
                             <span id="conteudoMobile"></span>
                             <span id="emailMobile"></span>
                             <br>
-
+                            
                         </div>
-                        <button class="botaoSairMobile" onclick="logout()">
-                            <p>Sair</p>
-                            <i id="logoutButtonMobile" class="fa-solid fa-arrow-right-from-bracket"></i>
-                        </button>
+                       <button class="botaoSairMobile" onclick="logout()"> <p>Sair</p>
+                            <i id="logoutButtonMobile" class="fa-solid fa-arrow-right-from-bracket"
+                                ></i></button>
                     </div>
-
+                    
                 </nav>
             </nav>
         </div>
-
+       
 
         </div>
         </div>
@@ -129,7 +128,6 @@
         <section>
             <div class="setor1Produto">
                 <h1>Confira nossos produtos!</h1>
-                <h1 class="mobile"><span>confira nossos</span> produtos!</h1>
                 <div class="topicos">
                     <div class="iconeFolha">
                         <div class="cuboMarrom">
@@ -597,12 +595,52 @@
                 });
         }
 
+        function buscarMobile() {
+            const termoDeBusca = document.getElementById("buscarMobile").value.toLowerCase();
+            const main = document.getElementById("conteudo");
+            main.innerHTML = ""; // Limpa o conteúdo atual
+
+            // Realiza a busca nos elementos com a classe "livros" no arquivo "produto.html"
+            fetch("produto.html")
+                .then(response => response.text())
+                .then(data => {
+                    // Crie um elemento temporário para analisar o conteúdo do produto.html
+                    const tempElement = document.createElement("div");
+                    tempElement.innerHTML = data;
+
+                    // Encontra os elementos com a classe "livros" e verifica se o título contém o termo de busca
+                    const livros = tempElement.querySelectorAll(".livros");
+                    livros.forEach(livro => {
+                        const titulo = livro.querySelector("img").alt.toLowerCase();
+
+                        if (titulo.includes(termoDeBusca)) {
+                            main.appendChild(livro.cloneNode(true));
+                        }
+                    });
+
+                    // Adicione a classe "area-de-busca" a main para aplicar os estilos
+                    main.classList.add("area-de-busca");
+
+                    // Verifique se há filhos na área de busca
+                    if (main.children.length === 0) {
+                        main.innerHTML = 'Nenhum resultado encontrado.';
+                        main.style.display = "flex";
+                        main.style.alignItems = "center";
+                        main.style.backgroundColor = "#F8F1EE"; // Cor de fundo quando nenhum resultado é encontrado
+                    }
+                })
+                .catch(error => {
+                    console.error("Erro ao buscar produtos:", error);
+                });
+        }
+
         document.addEventListener('DOMContentLoaded', function () {
             renderizarCabecalho();
         });
 
-        //carroseis mobile
-        var indexPreVenda = 0;
+
+          //carroseis mobile
+          var indexPreVenda = 0;
         var indexLancamentos = 0;
         var indexProdutos = 0;
 
